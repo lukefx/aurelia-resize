@@ -44,12 +44,4 @@ you can throttle...
  <div resize-event="handler.bind:resizeListener; debounce:500 ">
   ```
 
-... both of which you can bind:
-
-```html
-<div resize-event="handler.bind:resizeListener; throttle.bind:somevalue ">
- ```
-
-you should not use set both throttle and debounce; throttle will be selected before debounce.
-
 
