@@ -32,7 +32,7 @@ in your view, add the attribute and bind to your handler
 <div resize-event="handler.bind:resizeListener">
  ```
 
-you can throttle, or debounce. 
+you can also throttle, or debounce the events if you need to slow them down. 
 
 ```html
 <div resize-event="handler.bind:resizeListener; throttle:250 ">
