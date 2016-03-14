@@ -1,10 +1,11 @@
 # aurelia-resize-plugin
 
-an aurelia attribute add-on that detects DOM-element resize events
-either via window-change or CSS-animation.
+an aurelia attribute add-on that detects DOM-element resize events either via window-change or CSS-animation.
 
-
-
+Install with jspm
+```
+jspm install github:meirionhughes/aurelia-resize-plugin
+```
 
 In your view-model, add an event handler:
 
