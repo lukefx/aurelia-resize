@@ -9,6 +9,15 @@ Install with jspm
 jspm install aurelia-resize=github:meirionhughes/aurelia-resize-plugin@0.1.0
 ```
 
+Use the plug-in in your `main.js``
+```javascript
+export function configure(aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .developmentLogging()
+    .plugin('aurelia-resize')
+```
+
 In your view-model, add an event handler:
 
 ```javascript
