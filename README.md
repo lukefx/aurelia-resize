@@ -6,7 +6,7 @@ an aurelia attribute add-on that detects DOM-element resize events either via wi
 
 Install with jspm
 ```
-jspm install aurelia-resize=github:meirionhughes/aurelia-resize-plugin@0.1.0
+jspm install aurelia-resize=github:meirionhughes/aurelia-resize-plugin@0.2.0
 ```
 
 Use the plug-in in your `main.js``
@@ -14,16 +14,16 @@ Use the plug-in in your `main.js``
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging()
-    .plugin('aurelia-resize')
+    .plugin('aurelia-resize');
 ```
 
 In your view-model, add an event handler:
 
 ```javascript
-resizeListener = ()=>{
-  console.log("resizeListener called!");
-}
+resizeListener = (width, height) => {
+    console.log("width=" + width);
+    console.log("height=" + height);
+  }
 ```
 
 in your view, add the attribute and bind to your handler
@@ -32,16 +32,24 @@ in your view, add the attribute and bind to your handler
 <div resize-event="handler.bind:resizeListener">
  ```
 
-you can also throttle the resize events with
+you can throttle...
 
 ```html
 <div resize-event="handler.bind:resizeListener; throttle:250 ">
  ```
 
-... which you can also bind:
+... or debounce
+
+ ```html
+ <div resize-event="handler.bind:resizeListener; debounce:500 ">
+  ```
+
+... both of which you can bind:
 
 ```html
 <div resize-event="handler.bind:resizeListener; throttle.bind:somevalue ">
  ```
+
+you should not use set both throttle and debounce; throttle will be selected before debounce.
 
 

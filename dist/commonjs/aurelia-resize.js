@@ -21,14 +21,29 @@ var ResizeCustomAttribute = (function () {
   _createClass(ResizeCustomAttribute, [{
     key: 'createThrottler',
     value: function createThrottler(fn, delay) {
+      var _arguments = arguments;
+
       var timeout = 0;
       return function () {
+        var args = _arguments;
         if (timeout == 0) {
           timeout = setTimeout(function () {
             timeout = 0;
-            return fn();
+            return fn.apply(fn, args);
           }, delay);
         }
+      };
+    }
+  }, {
+    key: 'createDebouncer',
+    value: function createDebouncer(fn, delay) {
+      var timeout = 0;
+      return function () {
+        var args = arguments;
+        timeout && clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          return fn.apply(fn, args);
+        }, delay);
       };
     }
   }, {
@@ -36,11 +51,15 @@ var ResizeCustomAttribute = (function () {
     value: function bind() {
       if (this.handler == undefined) return;
 
-      this.callback = this.handler;
+      var element = this.element;
+      var handler = this.handler;
+      this.callback = function () {
+        var width = element.offsetWidth;
+        var height = element.offsetHeight;
+        handler(width, height);
+      };
 
-      if (this.throttle != undefined && this.throttle > 0) this.callback = this.createThrottler(this.callback, this.throttle);
-
-      this.callback;
+      if (this.throttle != undefined && this.throttle > 0) this.callback = this.createThrottler(this.callback, this.throttle);else if (this.debounce != undefined && this.debounce > 0) this.callback = this.createDebouncer(this.callback, this.debounce);
 
       addResizeListener(this.element, this.callback);
     }
@@ -52,6 +71,7 @@ var ResizeCustomAttribute = (function () {
   }]);
 
   var _ResizeCustomAttribute = ResizeCustomAttribute;
+  ResizeCustomAttribute = (0, _aureliaFramework.bindable)('debounce')(ResizeCustomAttribute) || ResizeCustomAttribute;
   ResizeCustomAttribute = (0, _aureliaFramework.bindable)('throttle')(ResizeCustomAttribute) || ResizeCustomAttribute;
   ResizeCustomAttribute = (0, _aureliaFramework.bindable)('handler')(ResizeCustomAttribute) || ResizeCustomAttribute;
   ResizeCustomAttribute = (0, _aureliaFramework.customAttribute)('resize-event')(ResizeCustomAttribute) || ResizeCustomAttribute;

@@ -10,6 +10,7 @@ import {customAttribute, bindable, inject} from 'aurelia-framework';
 @customAttribute('resize-event')
 @bindable('handler')
 @bindable('throttle')
+@bindable('debounce')
 export class ResizeCustomAttribute{
   constructor(element) {
     this.element = element;
@@ -19,24 +20,43 @@ export class ResizeCustomAttribute{
   createThrottler(fn, delay) {
     var timeout = 0;
     return ()=> {
+      var args = arguments;
       if (timeout == 0) {
         timeout = setTimeout(function () {
           timeout = 0;
-          return fn();
+          return fn.apply(fn, args);
         }, delay);
       }
+    }
+  }
+
+  createDebouncer(fn, delay) {
+    var timeout = 0;
+    return function () {
+      var args = arguments;
+      timeout && clearTimeout(timeout);
+      timeout = setTimeout(function () {
+        return fn.apply(fn, args)
+      }, delay);
     }
   }
 
   bind() {
     if (this.handler == undefined) return;
 
-    this.callback = this.handler;
+    var element = this.element;
+    var handler = this.handler;
+    this.callback = ()=> {
+      var width = element.offsetWidth;
+      var height = element.offsetHeight;
+      handler(width, height);
+    }
 
     if (this.throttle != undefined && this.throttle > 0)
       this.callback = this.createThrottler(this.callback, this.throttle);
 
-    this.callback;
+    else if (this.debounce != undefined && this.debounce > 0)
+      this.callback = this.createDebouncer(this.callback, this.debounce);
 
     addResizeListener(this.element, this.callback);
   }
@@ -46,8 +66,6 @@ export class ResizeCustomAttribute{
       removeResizeListener(this.element, this.callback);
   }
 }
-
-
 /**
  * Cross-Browser, Event-based, Element Resize Detection
  * by Daniel Buchner
@@ -119,5 +137,3 @@ export class ResizeCustomAttribute{
     }
   }
 })();
-
-

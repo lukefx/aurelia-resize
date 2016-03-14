@@ -1,6 +1,6 @@
 {
   "name": "aurelia-resize-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "an aurelia add-on that detects DOM-element resize events",
   "keywords": [
     "aurelia",
@@ -9,10 +9,7 @@
     "event",
     "layout"
   ],
-  "homepage": "http://aurelia.io",
-  "bugs": {
-    "url": "https://github.com/MeirionHughes/aurelia-resize-plugin"
-  },
+  "homepage": "https://github.com/MeirionHughes/aurelia-resize-plugin",
   "license": "CC0-1.0",
   "author": "Meirion Huighes (https://github.com/MeirionHughes)",
   "main": "dist/commonjs/index.js",
