@@ -1,4 +1,4 @@
-# aurelia-resize-plugin
+# aurelia-resize
 
 an aurelia attribute add-on that detects DOM-element resize events either via window-change or CSS-animation.
 
