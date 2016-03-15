@@ -7,7 +7,7 @@ Dependencies:
 
 Install with jspm
 ```
-jspm install aurelia-resize=github:meirionhughes/aurelia-resize-plugin@0.2.0
+jspm install aurelia-resize
 ```
 
 Use the plug-in in your `main.js``
