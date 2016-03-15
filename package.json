@@ -52,7 +52,7 @@
       "dist": "dist/amd"
     },
     "dependencies": {
-      "element-resize-detector": "npm:element-resize-detector@^1.1.0"
+      "element-resize-detector": "^1.1.0"
     },
     "devDependencies": {
       "aurelia-polyfills": "^1.0.0-beta.1.0.6",
