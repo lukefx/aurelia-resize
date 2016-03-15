@@ -2,7 +2,8 @@
 
 an aurelia attribute add-on that detects DOM-element resize events either via window-change or CSS-animation.
 
-[Detection code by Daniel Buchner](http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/)
+Dependencies:
+[npm:element-resize-detector](https://www.npmjs.com/package/element-resize-detector)
 
 Install with jspm
 ```
