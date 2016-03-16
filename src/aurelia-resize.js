@@ -16,7 +16,7 @@ export class ResizeCustomAttribute {
   constructor(element) {
     this.element = element;
     this.callback = null;
-    this.erd = erd();
+    this.erd = erd({ strategy: 'scroll' });
   }
 
   createThrottler(fn, delay) {
