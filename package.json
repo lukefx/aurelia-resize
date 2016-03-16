@@ -1,6 +1,6 @@
 {
   "name": "aurelia-resize",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "an aurelia add-on that detects DOM-element resize events",
   "keywords": [
     "aurelia",
@@ -50,6 +50,9 @@
     "format": "amd",
     "directories": {
       "dist": "dist/amd"
+    },
+    "dependencies": {
+      "element-resize-detector": "^1.1.0"
     },
     "devDependencies": {
       "aurelia-polyfills": "^1.0.0-beta.1.0.6",
