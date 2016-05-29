@@ -18,7 +18,7 @@ export function configure(aurelia) {
     .plugin('aurelia-resize');
 ```
 
-In your view-model, add an event handler:
+In your view-model, add an event handler (careful: currently needs to be a lambda):
 
 ```javascript
 resizeListener = (width, height) => {
