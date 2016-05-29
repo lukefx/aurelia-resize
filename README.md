@@ -18,7 +18,7 @@ export function configure(aurelia) {
     .plugin('aurelia-resize');
 ```
 
-In your view-model, add an event handler (careful: currently needs to be a function, see [Issue](https://github.com/MeirionHughes/aurelia-resize/issues/9) )
+In your view-model, add an event handler (careful: currently needs to be a function variable, see [Issue](https://github.com/MeirionHughes/aurelia-resize/issues/9) )
 
 ```javascript
 resizeListener = (width, height) => {
