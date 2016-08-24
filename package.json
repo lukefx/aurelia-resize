@@ -44,6 +44,9 @@
     "vinyl-paths": "^1.0.0",
     "yargs": "^2.1.1"
   },
+  "dependencies": {
+    "element-resize-detector": "^1.1.0"
+  },
   "jspm": {
     "registry": "npm",
     "main": "index",
