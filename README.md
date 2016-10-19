@@ -44,7 +44,7 @@ export function configure(aurelia) {
 in your view, add the `resizeable` attribute and bind to the `resize` event-handler
 
 ```html
-<div resizeable resize.trigger="resize($event.detail)">
+<div resizeable resize.trigger="foo($event.detail)">
  ```
 
 In your view-model, add an event handler:
