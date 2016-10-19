@@ -1,6 +1,6 @@
 {
   "name": "aurelia-resize",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "description": "an aurelia add-on that detects DOM-element resize events",
   "keywords": [
     "aurelia",
@@ -10,58 +10,23 @@
     "layout"
   ],
   "homepage": "https://github.com/MeirionHughes/aurelia-resize",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "author": "Meirion Huighes (https://github.com/MeirionHughes)",
-  "main": "dist/commonjs/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/MeirionHughes/aurelia-resize"
   },
-  "devDependencies": {
-    "aurelia-tools": "^0.1.18",
-    "conventional-changelog": "0.0.11",
-    "del": "^1.1.0",
-    "gulp": "^3.8.10",
-    "gulp-babel": "^5.1.0",
-    "gulp-bump": "^0.3.1",
-    "gulp-yuidoc": "^0.1.2",
-    "gulp-eslint": "^1.0.0",
-    "babel": "^5.8.23",
-    "babel-eslint": "^4.1.3",
-    "jasmine-core": "^2.1.3",
-    "jspm": "0.16.15",
-    "isparta": "^3.1.0",
-    "istanbul": "^0.3.13",
-    "karma": "^0.13.15",
-    "karma-babel-preprocessor": "^5.2.1",
-    "karma-chrome-launcher": "^0.2.1",
-    "karma-coverage": "^0.5.3",
-    "karma-jasmine": "^0.3.5",
-    "karma-jspm": "2.0.1-beta.2",
-    "object.assign": "^1.0.3",
-    "require-dir": "^0.1.0",
-    "run-sequence": "^1.0.2",
-    "vinyl-paths": "^1.0.0",
-    "yargs": "^2.1.1"
-  },
   "dependencies": {
-    "element-resize-detector": "^1.1.0"
+    "element-resize-detector": "^1.1.9"
   },
-  "jspm": {
-    "registry": "npm",
-    "main": "index",
-    "format": "amd",
-    "directories": {
-      "dist": "dist/amd"
-    },
-    "dependencies": {
-      "element-resize-detector": "^1.1.0"
-    },
-    "devDependencies": {
-      "aurelia-polyfills": "^1.0.0-beta.1.0.6",
-      "babel": "babel-core@^5.8.24",
-      "babel-runtime": "^5.8.24",
-      "core-js": "^2.0.3"
-    }
+  "devDependencies": {
+    "aurelia-framework": "^1.0.7",
+    "element-resize-detector": "^1.1.9",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-typescript": "^3.0.2",
+    "merge2": "^1.0.2",
+    "typescript": "^2.0.3"
   }
 }
