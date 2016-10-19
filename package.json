@@ -1,6 +1,6 @@
 {
   "name": "aurelia-resize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "an aurelia add-on that detects DOM-element resize events",
   "keywords": [
     "aurelia",
