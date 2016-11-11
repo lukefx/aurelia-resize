@@ -40,11 +40,11 @@ export class ResizeableCustomAttribute {
       heightOld = this.element.offsetHeight;
     };
 
-    this.erd.listenTo(this.element,this.callback );
+    this.erd.listenTo(this.element, this.callback);
   }
 
   unbind() {
-    if (this.callback){
+    if (this.callback) {
       this.erd.uninstall(this.element);
       this.callback = null;
     }
