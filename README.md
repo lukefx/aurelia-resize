@@ -50,12 +50,12 @@ in your view, add the `resizeable` attribute and bind to the `resize` event-hand
 In your view-model, add an event handler:
 
 ```javascript
-foo(detail) => {
+foo(detail){
     console.log("width=" + detail.width);
     console.log("height=" + detail.height);
     console.log("old width=" + detail.widthOld);
     console.log("old height=" + detail.heightOld);
-  }
+}
 ```
 
 you can also throttle, or debounce the events if you need to slow them down. 
