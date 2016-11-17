@@ -31,6 +31,25 @@ Add to your bundles:
 
 jspm install npm:aurelia-resize
 
+## Install (Webpack)
+
+Install with npm:
+```
+npm install aurelia-resize --save
+```
+
+Add to your package.json:
+
+```
+"aurelia": {
+  "build": {
+    "resources": [
+      "aurelia-resize/resizeable"
+    ]
+  }
+},
+```
+
 ## Usage
 
 Use the plug-in in your `main.js``
