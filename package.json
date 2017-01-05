@@ -1,6 +1,6 @@
 {
   "name": "aurelia-resize",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "an aurelia add-on that detects DOM-element resize events",
   "keywords": [
     "aurelia",
@@ -22,14 +22,24 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "element-resize-detector": "^1.1.9"
+    "element-resize-detector": "^1.1.10"
   },
   "devDependencies": {
     "aurelia-framework": "^1.0.7",
-    "element-resize-detector": "^1.1.9",
     "gulp-rimraf": "^0.2.0",
     "gulp-typescript": "^3.0.2",
     "merge2": "^1.0.2",
-    "typescript": "^2.0.9"
+    "typescript": "^2.1.4"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    },
+    "dependencies": {
+      "element-resize-detector": "^1.1.10"
+    }
   }
 }

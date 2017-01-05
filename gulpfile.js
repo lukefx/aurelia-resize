@@ -12,7 +12,7 @@ var paths = {
 }
 
 gulp.task('clean', function () {
-  return gulp.src([paths.output ], { read: false })
+  return gulp.src([paths.output], { read: false })
     .pipe(rimraf());
 });
 
@@ -21,11 +21,26 @@ gulp.task('compile', ['clean'], function () {
     typescript: require('typescript')
   });
 
-  var tsResult =  gulp.src([paths.source + '**/*.ts', "typings/*.d.ts"])
+  var tsResult = gulp.src([paths.source + '**/*.ts', "typings/*.d.ts"])
     .pipe(project());
 
   return merge([
     tsResult.dts.pipe(gulp.dest(paths.output)),
     tsResult.js.pipe(gulp.dest(paths.output))
+  ]);
+});
+
+gulp.task('compile:amd', ['clean'], function () {
+  var project = ts.createProject('tsconfig.json', {
+    typescript: require('typescript'),
+    "module": "amd"
+  });
+
+  var tsResult = gulp.src([paths.source + '**/*.ts', "typings/*.d.ts"])
+    .pipe(project());
+
+  return merge([
+    tsResult.dts.pipe(gulp.dest(paths.output)),
+    tsResult.js.pipe(gulp.dest(paths.output + "amd"))
   ]);
 });
