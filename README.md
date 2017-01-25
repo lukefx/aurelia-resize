@@ -17,7 +17,7 @@ Add to your bundles:
 ```
 {
   "name": "aurelia-resize",
-  "path": "../node_modules/aurelia-resize/dist",
+  "path": "../node_modules/aurelia-resize/dist/amd",
   "main": "index"
 },
 {
