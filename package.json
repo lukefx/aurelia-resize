@@ -22,6 +22,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "aurelia-pal-browser": "^1.2.1",
     "element-resize-detector": "^1.1.10"
   },
   "devDependencies": {
